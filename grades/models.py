@@ -130,6 +130,7 @@ class Grade(models.Model):
         verbose_name_plural = 'Grades'
         # Note: We don't use unique_together here because students can retake subjects
         ordering = ['-created_at']
+        unique_together = ('student', 'subject')
     
     def __str__(self):
         grade_display = self.grade if self.grade is not None else "No Grade Yet"
