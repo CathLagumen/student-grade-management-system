@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'grades',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom User Model
 AUTH_USER_MODEL = 'grades.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASS': 'rest_framework.paginition.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
